@@ -1,0 +1,10 @@
+.vs
+bin
+obj
+packages
+*.suo
+*.user
+node_modules
+scripts
+*.xml
+*.log
