@@ -25,8 +25,4 @@
     <ProjectReference Include="..\ToDo.Infrastructure\ToDo.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Tasks\Commands\" />
-  </ItemGroup>
-
 </Project>

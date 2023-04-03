@@ -21,6 +21,5 @@ namespace ToDo.Application.Features.Tasks.Queries.GetTaskList
 
             return _mapper.Map<List<TaskVm>>(taskList);
         }
-    
     }
 }

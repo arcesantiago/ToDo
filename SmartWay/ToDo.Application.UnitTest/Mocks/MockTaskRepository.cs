@@ -15,13 +15,13 @@ namespace ToDo.Application.UnitTests.Mocks
             tasks.Add(fixture.Build<Domain.Task>()
                 .With(tr => tr.Id, 1)
                 .With(tr => tr.Description)
-                .With(tr => tr.IsDone,false)
+                .With(tr => tr.Status,false)
                 .Create());
 
             tasks.Add(fixture.Build<Domain.Task>()
                 .With(tr => tr.Id, 2)
                 .With(tr => tr.Description)
-                .With(tr => tr.IsDone, true)
+                .With(tr => tr.Status, true)
                 .Create());
 
             toDoDbContextFake.Tasks!.AddRange(tasks);
