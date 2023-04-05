@@ -18,8 +18,8 @@ namespace ToDo.Infrastructure.Persistence
         {
             return new List<Domain.Task>
             {
-                new Domain.Task{CreatedBy = "santiagoarce", Description = "Crear modelo", Status = true},
-                new Domain.Task{CreatedBy = "santiagoarce", Description = "Crear repositorio", Status = false}
+                new Domain.Task{CreatedBy = "santiagoarce", Description = "Crear modelo", Status = "pending"},
+                new Domain.Task{CreatedBy = "santiagoarce", Description = "Crear repositorio", Status = "completed"}
             };
         }
     }

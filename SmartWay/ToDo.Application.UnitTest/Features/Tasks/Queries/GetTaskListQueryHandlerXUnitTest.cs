@@ -23,10 +23,21 @@ namespace ToDo.Application.UnitTests.Features.Tasks.Queries
             MockTaskRepository.AddDataTaskRepository(_unitOfWork.Object.ToDoDbContext);
         }
         [Fact]
-        public async Task GetVideoListTest()
+        public async Task GetVideoListPendingTest()
         {
             var handler = new GetTaskListQueryHandler(_unitOfWork.Object, _mapper);
-            var result = await handler.Handle(new GetTaskListQuery(), CancellationToken.None);
+            var result = await handler.Handle(new GetTaskListQuery("pending"), CancellationToken.None);
+
+            result.ShouldBeOfType<List<TaskVm>>();
+
+            result.Count.ShouldBe(5);
+        }
+
+        [Fact]
+        public async Task GetVideoListCompletedTest()
+        {
+            var handler = new GetTaskListQueryHandler(_unitOfWork.Object, _mapper);
+            var result = await handler.Handle(new GetTaskListQuery("completed"), CancellationToken.None);
 
             result.ShouldBeOfType<List<TaskVm>>();
 

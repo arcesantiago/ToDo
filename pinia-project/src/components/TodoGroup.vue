@@ -66,15 +66,18 @@ import CreateTask from "./CreateTask.vue";
         [TodoStatus.Completed]: "Completed",
     }
     const store = useTodoStore()
+     store.getList(props.status)
     const todoList = computed(() => store[props.status])
 
-    const updateTask = (item: TodoItem) => {
-      store.updateTask(item)
+    const updateTask = async (item: TodoItem) => {
+      await store.updateTask(item)
+      store.getList(TodoStatus.Pending)
+      store.getList(TodoStatus.Completed)
     }
 
-    const deleteTask = (item: TodoItem) => {
-      store.deleteTask(item)
+    const deleteTask = async (item: TodoItem) => {
+      await store.deleteTask(item)
+      store.getList(props.status)
     }
-
 
 </script>

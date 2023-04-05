@@ -6,6 +6,6 @@ namespace ToDo.Domain
     {
         public string Title { get; set; } = string.Empty;
         public string? Description { get; set; }
-        public bool Status { get; set; }
+        public string Status { get; set; } = string.Empty;
     }
 }

@@ -521,8 +521,7 @@ C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\obj\Debug\ne
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\obj\Debug\net6.0\ToDo.Application.UnitTests.AssemblyInfoInputs.cache
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\obj\Debug\net6.0\ToDo.Application.UnitTests.AssemblyInfo.cs
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\obj\Debug\net6.0\ToDo.Application.UnitTests.csproj.CoreCompileInputs.cache
-C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\obj\Debug\net6.0\ToDo.Application.UnitTests.dll
-C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\obj\Debug\net6.0\refint\ToDo.Application.UnitTests.dll
+C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\bin\Debug\net6.0\testhost.dll
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\bin\Debug\net6.0\EmptyFiles\archive\empty.7z
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\bin\Debug\net6.0\EmptyFiles\archive\empty.bz2
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\bin\Debug\net6.0\EmptyFiles\archive\empty.gz
@@ -565,7 +564,6 @@ C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\bin\Debug\ne
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\bin\Debug\net6.0\EmptyFiles\slide\empty.odp
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\bin\Debug\net6.0\EmptyFiles\slide\empty.pptx
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\bin\Debug\net6.0\testhost.exe
-C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\bin\Debug\net6.0\testhost.dll
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\bin\Debug\net6.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\bin\Debug\net6.0\xunit.runner.reporters.netcoreapp10.dll
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\bin\Debug\net6.0\xunit.runner.utility.netcoreapp10.dll
@@ -773,5 +771,7 @@ C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\bin\Debug\ne
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\bin\Debug\net6.0\ToDo.Infrastructure.pdb
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\bin\Debug\net6.0\ToDo.Domain.pdb
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\obj\Debug\net6.0\ToDo.Application.UnitTests.csproj.CopyComplete
+C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\obj\Debug\net6.0\ToDo.Application.UnitTests.dll
+C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\obj\Debug\net6.0\refint\ToDo.Application.UnitTests.dll
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\obj\Debug\net6.0\ToDo.Application.UnitTests.genruntimeconfig.cache
 C:\Users\arces\source\repos\ToDo\SmartWay\ToDo.Application.UnitTest\obj\Debug\net6.0\ref\ToDo.Application.UnitTests.dll

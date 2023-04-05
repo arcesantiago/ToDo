@@ -1,12 +1,13 @@
 import { defineStore } from 'pinia'
-import axios from 'axios'
+import axios, { type AxiosResponse } from 'axios'
+
 export enum TodoStatus {
     Pending = "pending",
     Completed = "completed"
 }
 
 export type TodoItem = {
-    id: number
+    id?: number
     title:string;
     description: string
     status: TodoStatus
@@ -16,7 +17,6 @@ interface State {
     [TodoStatus.Pending] : TodoItem[];
     [TodoStatus.Completed] : TodoItem[];
 }
-
 
 export const useTodoStore = defineStore('todo', {
 
@@ -29,31 +29,50 @@ export const useTodoStore = defineStore('todo', {
     totalCount: (state) => state[TodoStatus.Pending].length + state[TodoStatus.Completed].length
   },
   actions: {
-    getList:() => axios.get('http://localhost:5041/api/v1/Tasks/GetTaskList')
+    async getList (status:TodoStatus) {
+      let data: TodoItem[] = []
+      await axios.get<TodoItem[]>('http://localhost:5041/api/v1/Tasks/' + status)
     .then(function (response) {
-      // manejar respuesta exitosa
+      data = response.data
       console.log(response);
     })
     .catch(function (error) {
-      // manejar error
       console.log(error);
-    }),
-    createTask (payload: TodoItem) {
-        this[payload.status].push(payload)
+    })
+    debugger;
+    this[status] = data
+  },
+    async createTask (payload: TodoItem) {
+
+      await axios.post('http://localhost:5041/api/v1/Tasks', payload)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
     },
-    deleteTask (payload: TodoItem) {
-        this[payload.status] = this[payload.status].filter(element => element !== payload)
+    async deleteTask (payload: TodoItem) {
+      debugger;
+       await axios.delete('http://localhost:5041/api/v1/Tasks/' + payload.id)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+        return;
+      });
     },
-    updateTask (payload: TodoItem) {
-        this[payload.status] = this[payload.status].filter(
-            (todo) => todo.id !== payload.id
-          );
-      
-          if(payload.status == TodoStatus.Pending) payload.status = TodoStatus.Completed
-      
-          else payload.status = TodoStatus.Pending;
-            
-          this[payload.status].unshift(payload)
+    async updateTask (payload: TodoItem) {
+      debugger;
+      await axios.put('http://localhost:5041/api/v1/Tasks/' + payload.id)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+        return;
+      });
     }
   }
 })

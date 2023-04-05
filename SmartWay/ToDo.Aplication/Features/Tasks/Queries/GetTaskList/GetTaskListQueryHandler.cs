@@ -17,7 +17,7 @@ namespace ToDo.Application.Features.Tasks.Queries.GetTaskList
 
         public async Task<List<TaskVm>> Handle(GetTaskListQuery request, CancellationToken cancellationToken)
         {
-            var taskList = await _unitOfWork.TaskRepository.GetAllAsync();
+            var taskList = await _unitOfWork.TaskRepository.GetAsync(x => x.Status == request._Status);
 
             return _mapper.Map<List<TaskVm>>(taskList);
         }

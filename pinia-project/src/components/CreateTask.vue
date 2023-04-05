@@ -22,18 +22,16 @@ const props = defineProps<Props>();
     const title = ref('')
     const description = ref('')
     const store = useTodoStore()
-    const createTask = () => {
+    const createTask = async () => {
       if (title.value === '') return
       if (description.value === '') return
       const item: TodoItem = {
-        id: Math.random() * 10000000000000000,
         title: title.value,
         description: description.value,
         status: props.status
       }
-      store.createTask(item)
-      debugger;
-      store.getList()
+      await store.createTask(item)
+      await store.getList(props.status)
       title.value = ''
       description.value = ''
     }

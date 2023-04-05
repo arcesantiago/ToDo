@@ -19,11 +19,11 @@ namespace ToDo.API.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("GetTaskList")]
+        [HttpGet("{status}",Name = "GetTaskList")]
         [ProducesResponseType(typeof(IEnumerable<TaskVm>), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<IEnumerable<TaskVm>>> GetTaskList()
+        public async Task<ActionResult<IEnumerable<TaskVm>>> GetTaskList(string status)
         {
-            return await _mediator.Send(new GetTaskListQuery());
+            return await _mediator.Send(new GetTaskListQuery(status));
         }
 
         [HttpPost(Name = "CreateTask")]
@@ -33,13 +33,13 @@ namespace ToDo.API.Controllers
             return await _mediator.Send(request);
         }
 
-        [HttpPut(Name = "UpdateTask")]
+        [HttpPut("{id}", Name = "UpdateTask")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
-        public async Task<ActionResult> UpdateTask([FromBody] UpdateTaskCommand request)
+        public async Task<ActionResult> UpdateTask(int id)
         {
-            await _mediator.Send(request);
+            await _mediator.Send(new UpdateTaskCommand(id));
 
             return NoContent();
         }
