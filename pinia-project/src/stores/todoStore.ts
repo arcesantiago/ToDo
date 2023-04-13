@@ -31,7 +31,7 @@ export const useTodoStore = defineStore('todo', {
   actions: {
     async getList (status:TodoStatus) {
       let data: TodoItem[] = []
-      await axios.get<TodoItem[]>('http://localhost:5041/api/v1/Tasks/' + status)
+      await axios.get<TodoItem[]>('http://localhost:3000/api/v1/Tasks/' + status)
     .then(function (response) {
       data = response.data
       console.log(response);
@@ -44,7 +44,7 @@ export const useTodoStore = defineStore('todo', {
   },
     async createTask (payload: TodoItem) {
 
-      await axios.post('http://localhost:5041/api/v1/Tasks', payload)
+      await axios.post('http://localhost:3000/api/v1/Tasks', payload)
       .then(function (response) {
         console.log(response);
       })
@@ -54,7 +54,7 @@ export const useTodoStore = defineStore('todo', {
     },
     async deleteTask (payload: TodoItem) {
       debugger;
-       await axios.delete('http://localhost:5041/api/v1/Tasks/' + payload.id)
+       await axios.delete('http://localhost:3000/api/v1/Tasks/' + payload.id)
       .then(function (response) {
         console.log(response);
       })
@@ -65,7 +65,7 @@ export const useTodoStore = defineStore('todo', {
     },
     async updateTask (payload: TodoItem) {
       debugger;
-      await axios.put('http://localhost:5041/api/v1/Tasks/' + payload.id)
+      await axios.put('http://localhost:3000/api/v1/Tasks/' + payload.id)
       .then(function (response) {
         console.log(response);
       })

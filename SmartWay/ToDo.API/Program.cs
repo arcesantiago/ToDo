@@ -1,6 +1,7 @@
 using ToDo.API.Middleware;
 using ToDo.Application;
 using ToDo.Infrastructure;
+using ToDo.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +23,11 @@ builder.Services.AddCors(options =>
 
 });
 
+
+
 var app = builder.Build();
+
+DatabaseManagementService.MigrationInitialisation(app);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
